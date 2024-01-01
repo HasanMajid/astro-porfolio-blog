@@ -5,10 +5,20 @@ const {title} = Astro.props;
 <script>
 	const html = document.getElementById("html");
 	const themeButtom = document.getElementById("theme-buttom")
+	const theme = localStorage.getItem("theme")
+	if (!!theme) {
+		html?.setAttribute("data-theme", theme)
+		console.log(theme);
+	} else {
+		localStorage.setItem("theme", "dark")
+		html?.setAttribute("data-theme", "dark")
+	}
 	function changeTheme() {
 		if (html?.getAttribute("data-theme") === "dark"){
+			localStorage.setItem("theme", "light")
 			html?.setAttribute("data-theme", "light")
 		} else {
+			localStorage.setItem("theme", "dark")
 			html?.setAttribute("data-theme", "dark")
 		}
 	}
