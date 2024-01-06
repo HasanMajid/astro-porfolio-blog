@@ -1,5 +1,5 @@
 {
     "[astro]": {
-        "editor.defaultFormatter": "Jota0222.multi-formatter"
+        "editor.defaultFormatter": "astro-build.astro-vscode"
     }
 }
