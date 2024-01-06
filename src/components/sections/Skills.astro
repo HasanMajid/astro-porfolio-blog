@@ -1,0 +1,57 @@
+<section>
+    <h2>Skills</h2>
+    <div id="skills">
+        <div class="skill">Node.js</div>
+        <div class="skill">React.js</div>
+        <div class="skill">Express.js</div>
+        <div class="skill">Next.js</div>
+        <div class="skill">Javascript</div>
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">Python</div>
+        <div class="skill">Java</div>
+        <div class="skill">Full-stack</div>
+        <div class="skill">Backend</div>
+    </div>
+</section>
+
+<style>
+    section {
+        background-color: antiquewhite;
+        border-radius: 0.5rem;
+        padding-inline: 5rem;
+        padding-block: 2rem;
+    }
+
+    h2 {
+        color: black;
+    }
+
+    #skills {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+    }
+
+    .skill {
+        background-color: antiquewhite;
+        width: fit-content;
+        padding: 0.5rem;
+        border-radius: 3rem;
+        font-size: larger;
+        font-weight: bold;
+        border: 1px solid gray;
+    }
+
+    html[data-theme="dark"] .skill {
+        color: black;
+        background-color: white;
+    }
+
+    .skill:hover {
+        cursor: pointer;
+        box-shadow: 2px 2px 2px;
+    }
+</style>
