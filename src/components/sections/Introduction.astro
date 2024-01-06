@@ -1,0 +1,62 @@
+---
+import { Image } from "astro:assets";
+import MyImage from "../../images/MyImage.png";
+---
+
+<section>
+<!-- <h1>Who I </h1> -->
+	<div id="content">
+		<div id="titles">
+			<h2 id="title">I am Hasan Majid</h2>
+			<!-- <h2 id="title">Software Developer</h2> -->
+			<!-- <h2 id="title">Full-stack Developer</h2> -->
+			<!-- <h2 id="title"></h2> -->
+			<p>
+				I am a full-stack developer with experience in mobile and web
+				development to solve real-world problems, and I have a passion 
+				for learning new technologies. I am currently pursuing my BSc
+				in Computer Science at Toronto Metropolitan University.
+			</p>
+		</div>
+		<img src={MyImage.src} width="300rem" />
+	</div>
+</section>
+
+<style>
+	#content {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+	}
+	
+	h2 {
+		margin: 0;
+	}
+
+	p {
+		width: 35rem;
+	}
+
+	#titles {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;	
+	}
+
+	#title {
+		border-radius: 0.5rem;
+		background-color: gainsboro;
+		padding: 0.5rem;
+		padding-block: 0.2rem;
+		width: fit-content;
+		margin: auto;
+	}
+
+	html[data-theme="dark"] #title {
+		color: black;
+		background-color: aliceblue;
+	}
+</style>
