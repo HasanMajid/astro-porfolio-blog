@@ -2,17 +2,19 @@
 import ThemeController from '../components/ThemeController'
 ---
 
-<nav class="navbar bg-base-100 text-base-content border-2 rounded-box">
+<nav class="navbar bg-base-100 text-base-content outline rounded-box">
     <div class="flex flex-col">
-        <h1 class="btn btn-ghost text-4xl">Hasan Majid</h1>
+        <h1 class="btn btn-ghost text-4xl">
+            <a href="/">Hasan Majid</a>
+        </h1>
         <p class="">Simplicty above all</p>
     </div>
-    <div class="flex gap-10 w-fit ml-auto">
-        <div class="h-16">
+    <div class="flex gap-10 w-fit ml-auto items-center justify-center">
+        <div class="h-14">
             <ThemeController client:only="solid" />
         </div>
         <a href="/" class="btn btn-ghost text-2xl">Home</a>
-        <a href="/about" class="btn btn-ghost text-2xl">Blog</a>
+        <a href="/blog" class="btn btn-ghost text-2xl">Blog</a>
     </div>
 </nav>
 
