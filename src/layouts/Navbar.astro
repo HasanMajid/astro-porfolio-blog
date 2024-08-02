@@ -2,9 +2,9 @@
 import ThemeController from '../components/ThemeController'
 ---
 
-<nav class="navbar bg-base-100 text-base-content outline rounded-box">
+<nav class="navbar bg-base-100 text-base-content rounded-box glass">
     <div class="flex flex-col">
-        <h1 class="btn btn-ghost text-4xl">
+        <h1 class="btn btn-ghost text-blue-500 text-4xl">
             <a href="/">Hasan Majid</a>
         </h1>
         <p class="">Simplicty above all</p>
@@ -15,6 +15,24 @@ import ThemeController from '../components/ThemeController'
         </div>
         <a href="/" class="btn btn-ghost text-2xl">Home</a>
         <a href="/blog" class="btn btn-ghost text-2xl">Blog</a>
+        <ul class="flex flex-row">
+            <li>
+                <a class="btn btn-link drawer-button" href="/posts/post-1/"
+                    >Post 1</a
+                >
+            </li>
+
+            <li>
+                <a class="btn btn-link drawer-button" href="/posts/post-2/"
+                    >Post 2</a
+                >
+            </li>
+            <li>
+                <a class="btn btn-link drawer-button" href="/posts/post-3/"
+                    >Post 3</a
+                >
+            </li>
+        </ul>
     </div>
 </nav>
 
