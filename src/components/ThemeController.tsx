@@ -5,11 +5,7 @@ function ThemeController() {
     }
     return (
         <div class="dropdown mb-72">
-            <div
-                tabindex="0"
-                role="button"
-                class="btn m-1 shadow-md shadow-gray-500/50"
-            >
+            <div tabindex="0" role="button" class="btn m-1 shadow-lg">
                 Theme
                 <svg
                     width="12px"
