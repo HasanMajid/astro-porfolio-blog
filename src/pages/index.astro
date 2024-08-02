@@ -1,11 +1,12 @@
 ---
-import Layout from "../components/layouts/Layout.astro";
-import Introduction from "../components/sections/Introduction.astro"
-import Skills from "../components/sections/Skills.astro";
-
+import Layout from '../layouts/Layout.astro'
+import AboutMe from '../components/sections/AboutMe.astro'
+import MySkills from '../components/sections/MySkills.astro'
 ---
 
-<Layout title={"About"}>
-	<Introduction/>
-	<Skills/>
+<Layout title="Welcome to Astro.">
+    <main>
+        <AboutMe />
+        <MySkills />
+    </main>
 </Layout>

@@ -1,0 +1,27 @@
+---
+import ThemeController from '../components/ThemeController'
+---
+
+<nav class="navbar bg-base-100 text-base-content border-2 rounded-box">
+    <div class="flex flex-col">
+        <h1 class="btn btn-ghost text-4xl">Hasan Majid</h1>
+        <p class="">Simplicty above all</p>
+    </div>
+    <div class="flex gap-10 w-fit ml-auto">
+        <div class="h-16">
+            <ThemeController client:only="solid" />
+        </div>
+        <a href="/" class="btn btn-ghost text-2xl">Home</a>
+        <a href="/about" class="btn btn-ghost text-2xl">Blog</a>
+    </div>
+</nav>
+
+<script>
+    const theme = window.localStorage.getItem('data-theme')
+    if (theme === null) {
+        document.documentElement.setAttribute('data-theme', 'light')
+        window.localStorage.setItem('data-theme', 'light')
+    } else {
+        document.documentElement.setAttribute('data-theme', theme)
+    }
+</script>
