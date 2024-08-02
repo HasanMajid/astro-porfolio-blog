@@ -1,9 +1,9 @@
 ---
 interface Props {
-    title: string
+    title?: string
 }
 
-const { title } = Astro.props
+const { title = 'Hasan Majid' } = Astro.props
 import Navbar from './Navbar.astro'
 ---
 
@@ -13,7 +13,7 @@ import Navbar from './Navbar.astro'
         <meta charset="UTF-8" />
         <meta name="description" content="Astro description" />
         <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/svg+xml" href="/MyImage.png" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
     </head>
