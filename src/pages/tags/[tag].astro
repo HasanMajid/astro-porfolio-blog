@@ -1,0 +1,51 @@
+---
+import Layout from '../../layouts/Layout.astro'
+
+interface MarkDownPost {
+    frontmatter: {
+        title: string
+        description: string
+        pubDate: string
+        author: string
+        tags: string[]
+    }
+}
+
+interface Post extends MarkDownPost {
+    url: string
+}
+
+export async function getStaticPaths() {
+    const allPosts: MarkDownPost[] = await Astro.glob('../posts/*.md')
+
+    return [
+        { params: { tag: 'astro' }, props: { posts: allPosts } },
+        { params: { tag: 'successes' }, props: { posts: allPosts } },
+        { params: { tag: 'community' }, props: { posts: allPosts } },
+        { params: { tag: 'blogging' }, props: { posts: allPosts } },
+        { params: { tag: 'setbacks' }, props: { posts: allPosts } },
+        { params: { tag: 'learning in public' }, props: { posts: allPosts } },
+    ]
+}
+
+const { tag } = Astro.params
+const { posts } = Astro.props as { posts: Post[] }
+const filteredPosts = posts.filter((post) =>
+    post.frontmatter.tags?.includes(tag)
+)
+---
+
+<Layout title={tag}>
+    <p>Posts tagged with {tag}</p>
+    <ul>
+        {
+            filteredPosts.map((post) => (
+                <li>
+                    <h2>here</h2>
+                    <p>{post.frontmatter.pubDate}</p>
+                    <a href={post.url}>{post.frontmatter.title}</a>
+                </li>
+            ))
+        }
+    </ul>
+</Layout>
