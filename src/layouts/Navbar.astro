@@ -1,11 +1,14 @@
 ---
 import ThemeController from '../components/ThemeController'
+const base = Astro.url.pathname.split('/')[1]
 ---
 
-<nav class="navbar bg-base-100 text-base-content rounded-box glass">
+<nav
+    class="navbar z-10 bg-base-100 shadow-lg drop-shadow-lg text-base-content rounded-box glass sticky top-2 left-2 bg-transparent"
+>
     <div class="flex flex-col">
         <h1 class="btn btn-ghost text-4xl">
-            <a href="/">Hasan Majid</a>
+            <a href="/" class="">Hasan Majid</a>
         </h1>
         <p class="">Simplicty above all</p>
     </div>
@@ -13,8 +16,31 @@ import ThemeController from '../components/ThemeController'
         <div class="h-14">
             <ThemeController client:only="solid" />
         </div>
-        <a href="/" class="btn btn-ghost text-2xl">Home</a>
-        <a href="/blog" class="btn btn-ghost text-2xl">Blog</a>
+        <div
+            role="tablist"
+            class="flex flex-row gap-4 tabs tabs-boxed shadow-lg"
+        >
+            <a
+                href="/"
+                role="tab"
+                class:list={[
+                    'btn btn-ghost text-2xl tab',
+                    base === '' && 'tab-active',
+                ]}
+            >
+                Home
+            </a>
+            <a
+                href="/blog"
+                role="tab"
+                class:list={[
+                    'btn btn-ghost text-2xl tab',
+                    base === 'blog' && 'tab-active',
+                ]}
+            >
+                Blog
+            </a>
+        </div>
         <ul class="flex flex-row">
             <li>
                 <a class="btn btn-link drawer-button" href="/posts/post-1/"
