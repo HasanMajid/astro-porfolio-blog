@@ -1,5 +1,46 @@
+---
+import ProjectCard from '../projects/ProjectCard.astro'
+const projectData: {
+    title: string
+    description: string
+    github_url: string
+    website_url: string
+    image_url: string
+}[] = [
+    {
+        title: 'Battleship',
+        description:
+            'A simple game of battleship between you and the computer!',
+        github_url: 'https://github.com/HasanMajid/battleship',
+        website_url: 'https://battleship-phi-two.vercel.app/',
+        image_url: '/projects/battleship.png',
+    },
+    {
+        title: 'Wordle',
+        description:
+            'A simple game of wordle that automatically generates and safekeeps the word in the backend!',
+        github_url: 'https://github.com/HasanMajid/wordle',
+        website_url: 'https://wordle-eosin-mu.vercel.app/',
+        image_url: '/projects/wordle.png',
+    },
+]
+---
+
 <section
     class="container mx-auto my-5 flex flex-col items-center justify-center rounded-box"
 >
     <h2 class="text-6xl my-12">Projects</h2>
+    <div class="flex flex-row flex-wrap gap-2">
+        {
+            projectData.map((project) => (
+                <ProjectCard
+                    title={project.title}
+                    description={project.description}
+                    github_url={project.github_url}
+                    website_url={project.website_url}
+                    image_url={project.image_url}
+                />
+            ))
+        }
+    </div>
 </section>
