@@ -1,5 +1,5 @@
 ---
-import Layout from '../../layouts/Layout.astro'
+import Layout from '../../../layouts/Layout.astro'
 
 interface MarkDownPost {
     frontmatter: {
@@ -16,7 +16,7 @@ interface Post extends MarkDownPost {
 }
 
 export async function getStaticPaths() {
-    const allPosts: MarkDownPost[] = await Astro.glob('../posts/*.md')
+    const allPosts: MarkDownPost[] = await Astro.glob('../*.md')
 
     return [
         { params: { tag: 'astro' }, props: { posts: allPosts } },
@@ -24,7 +24,8 @@ export async function getStaticPaths() {
         { params: { tag: 'community' }, props: { posts: allPosts } },
         { params: { tag: 'blogging' }, props: { posts: allPosts } },
         { params: { tag: 'setbacks' }, props: { posts: allPosts } },
-        { params: { tag: 'learning in public' }, props: { posts: allPosts } },
+        { params: { tag: 'reactjs' }, props: { posts: allPosts } },
+        { params: { tag: 'solidjs' }, props: { posts: allPosts } },
     ]
 }
 
