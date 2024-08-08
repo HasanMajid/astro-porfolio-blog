@@ -1,5 +1,6 @@
 ---
 import ThemeController from '../components/ThemeController'
+import { ViewTransitions } from 'astro:transitions'
 const base = Astro.url.pathname.split('/')[1]
 ---
 
@@ -62,6 +63,7 @@ const base = Astro.url.pathname.split('/')[1]
     </div>
 </nav>
 <div class="divider"></div>
+<ViewTransitions />
 
 <script>
     const theme = window.localStorage.getItem('data-theme')
