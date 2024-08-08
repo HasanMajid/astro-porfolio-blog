@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro'
+import BlogCard from '../../components/blogs/BlogCard.astro'
 const allPosts = await Astro.glob('./*.md')
 ---
 
@@ -7,12 +8,15 @@ const allPosts = await Astro.glob('./*.md')
     <main class="flex flex-col gap-5">
         <h1 class="text-6xl">My Blog</h1>
         <p>This is where I will post about my journey learning Astro.</p>
-        <ul>
+        <ul class="flex flex-row flex-wrap gap-3">
             {
                 allPosts.map((post) => (
-                    <li>
-                        <a href={post.url}>{post.frontmatter.title}</a>
-                    </li>
+                    <BlogCard
+                        title={post.frontmatter.title}
+                        description={post.frontmatter.description}
+                        url={post.url}
+                        image={post.frontmatter.image}
+                    />
                 ))
             }
         </ul>
