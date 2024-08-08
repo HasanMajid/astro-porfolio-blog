@@ -7,14 +7,14 @@ const { title, description, url, image } = Astro.props
         href={url}
         class="flex flex-col justify-center items-center gap-2 p-3 border-2 w-[25rem] h-[20rem] rounded-box shadow-md"
     >
-        <img
-            src={image.url}
-            alt={image.alt}
-            class="w-[25rem] h-[13rem] rounded-lg"
-        />
-        <h2 class="text-xl font-bold">{title}</h2>
-        <div class="flex flex-col gap-1">
-            <p class="text-sm self-center">{description}</p>
-        </div>
+        <img src={image.url} alt={image.alt} class="w-[25rem] h-[13rem]" />
+        <h2
+            class="text-xl font-bold text-center w-[23rem] h-[3.5rem] line-clamp-2"
+        >
+            {title}
+        </h2>
+        <!-- <p class="text-sm self-center text-center text-ellipsis">
+            {description}
+        </p> -->
     </a>
 </li>
