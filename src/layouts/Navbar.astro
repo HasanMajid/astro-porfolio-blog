@@ -65,12 +65,14 @@ const base = Astro.url.pathname.split('/')[1]
 <div class="divider"></div>
 <ViewTransitions />
 
-<script>
-    const theme = window.localStorage.getItem('data-theme')
-    if (theme === null) {
-        document.documentElement.setAttribute('data-theme', 'light')
-        window.localStorage.setItem('data-theme', 'light')
-    } else {
-        document.documentElement.setAttribute('data-theme', theme)
-    }
+<script is:inline>
+    document.addEventListener('astro:after-swap', () => {
+        const theme = window.localStorage.getItem('data-theme')
+        if (theme === null) {
+            document.documentElement.setAttribute('data-theme', 'light')
+            window.localStorage.setItem('data-theme', 'light')
+        } else {
+            document.documentElement.setAttribute('data-theme', theme)
+        }
+    })
 </script>
