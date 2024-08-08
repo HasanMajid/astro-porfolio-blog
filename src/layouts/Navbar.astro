@@ -65,8 +65,8 @@ const base = Astro.url.pathname.split('/')[1]
 <div class="divider"></div>
 <ViewTransitions />
 
-<script is:inline>
-    document.addEventListener('astro:after-swap', () => {
+<script>
+    document.addEventListener('astro:page-load', () => {
         const theme = window.localStorage.getItem('data-theme')
         if (theme === null) {
             document.documentElement.setAttribute('data-theme', 'light')
